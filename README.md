@@ -1,6 +1,6 @@
 ## Multi-tenant logging using EKS , Amazon MSK and  Amazon OpenSearch
 
-You can use terraform code and following instructions to use EKS's namespace for tenant's isolation and forward logs AMazon Managed Service for Kafka to store and Finally to OpeneSearch. To achieve this, we will deploy Fluent Bit as a DaemonSet to tail /var/log/containers/*.log on the EKS cluster and use fluent-bit annotations to configure desired parser for services in each tenant's namespace.It will create one topic for each tenant in KAFKA and a MSK connector for OpenSearch to send these logs to OpenSearch such that each tenant will have one Index. In the end there is a link to OpenSearch multi-tenancy configuration using RBAC .
+You can use terraform code and following instructions to use EKS's namespace for tenant's isolation and forward logs AMazon Managed Service for Kafka to store and Finally to OpeneSearch. To achieve this, we will deploy Fluent Bit as a DaemonSet to tail /var/log/containers/*.log on the EKS cluster and use fluent-bit annotations to configure desired parser for deployments(pods) in each tenant's namespace.It will create one topic for each tenant in KAFKA and a MSK connector for OpenSearch to send these logs to OpenSearch such that each tenant will have one Index. In the end there is a link to OpenSearch multi-tenancy configuration using RBAC .
 
 Terraform code will help you to create an EKS cluster, MSK cluster, Kafka custom pluging ,Kafka Connector  and OpenSearch domain in one VPC.
 
