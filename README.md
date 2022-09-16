@@ -30,11 +30,10 @@ default = [
       "enable_logs_to_es" = true,
 ```
 * Note. Terraform code will create VPC and all required components. But your OpenSearch dashboard will not be accessible over internet, so you might consider using a AWS client VPN ( or any connectivity method to allow you access to dashboard). you can also launch use a Microsoft windows instance in same VPC and access it via RDP and then access your OpenSearch dashboard 
-
-1. ```cd terraform
  
- run terraform init  
- terraform apply 
+```cd terraform
+   run terraform init  
+   terraform apply 
  ```
 Wait for terraform  apply to complete. It can take approximatly 30-35 mins to provison MSK and Kafka connector to become "Running" 
 
